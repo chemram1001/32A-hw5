@@ -24,16 +24,21 @@ def makePopDictionary():
 # countries that have changed percentage of people with
 # access, if population is big enough.
 def readDWdata():
-	csvfile = open('drinkingWater.csv','r')
-	file = csv.reader(csvfile,delimiter=',')
-	for row in file:
-		country = row[0]
-		if row[1].isdigit() and row[21].isdigit():
-			data1990 = int(row[1])
-			data2010 = int(row[21])
-			diff = data2010 - data1990
-			print(country, data1990, data2010, diff)
-	return
+        csvfile = open('drinkingWater.csv','r')
+        file = csv.reader(csvfile,delimiter=',')
+        for row in file:
+                if row[1] == "" or row[21] == '':
+                        pass
+                elif row[0]=='(home)':
+                        pass
+                else:
+                        data1990 = row[1]
+                        data2010 = row[21]
+                        data1990 = int(data1990)
+                        data2010 = int(data2010)
+                        diff = data2010 - data1990
+                        print(row[0],row[1],row[21],diff)
+        return
 
 def main():
 	makePopDictionary()
