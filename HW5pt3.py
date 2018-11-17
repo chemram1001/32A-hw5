@@ -17,7 +17,7 @@ def makePopDictionary():
 		pop = int(pop)
 		popDictionary[countryName] = pop
 		#print(countryName,pop)
-	#print(popDictionary)
+	print(popDictionary)
 	return {}
 
 # function that reads drinking water file and prints out
